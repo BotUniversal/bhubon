@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import titles from '../../data/titles.json';
+
+export function getStaticPaths() {
+  return titles.map(t => ({ params: { slug: t.slug }, props: { t } }));
+}
+const { t } = Astro.props;
+const poster = `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Movie',
+  name: t.titleBn,
+  alternateName: t.titleEn,
+  description: t.synopsisEn,
+  datePublished: String(t.year),
+  image: poster,
+  inLanguage: 'bn',
+};
+---
+<Base title={`${t.titleBn} (${t.year}) — ভুবন`} description={t.synopsisBn}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div class="wrap" style="padding:30px 16px">
+    <div style="display:grid;gap:26px;grid-template-columns:260px 1fr" class="detail">
+      <img src={poster} alt={t.titleBn} style="border-radius:12px;border:1px solid var(--line)" />
+      <div>
+        <h1 style="font-size:30px;margin:0 0 10px" data-en={t.titleEn}>{t.titleBn}</h1>
+        <div class="meta">
+          <span>{t.year}</span>
+          <span class="chip" data-en={t.type}>{t.type}</span>
+          {t.genres.map(g => <span class="chip">{g}</span>)}
+        </div>
+        <p style="max-width:65ch;color:#c9c9d4" data-en={t.synopsisEn}>{t.synopsisBn}</p>
+        <a class="btn btn-primary" href={`/watch/${t.slug}`} data-en="▶ Play">▶ দেখুন</a>
+      </div>
+    </div>
+  </div>
+  <style>
+    @media(max-width:640px){ .detail{grid-template-columns:1fr !important} }
+  </style>
+</Base>

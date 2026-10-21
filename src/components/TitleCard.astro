@@ -1,0 +1,15 @@
+---
+const { t } = Astro.props;
+const poster = `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`;
+---
+<a class="card" href={`/watch/${t.slug}`}>
+  <div class="card-thumb">
+    <img src={poster} alt={t.titleBn} loading="lazy" decoding="async"
+      onerror={`this.src='https://i.ytimg.com/vi/${t.youtubeId}/hqdefault.jpg'`} />
+    <span class="card-badge" data-en={t.titleEn}>{t.titleBn}</span>
+  </div>
+  <div class="card-body">
+    <h3 data-en={t.titleEn}>{t.titleBn}</h3>
+    <span>{t.year} · {t.type}</span>
+  </div>
+</a>

@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import titles from '../../data/titles.json';
+
+export function getStaticPaths() {
+  return titles.map(t => ({ params: { slug: t.slug }, props: { t } }));
+}
+const { t } = Astro.props;
+const poster = `https://i.ytimg.com/vi/${t.youtubeId}/maxresdefault.jpg`;
+---
+<Base title={`${t.titleBn} — ভুবন`} description={t.synopsisBn}>
+  <div class="wrap" style="padding-top:22px">
+    <div class="player" id="player">
+      <button class="facade" id="facade" aria-label="Play">
+        <img src={poster} alt={t.titleBn} />
+        <span class="facade-play"><i>▶</i></span>
+      </button>
+    </div>
+
+    <div class="servers">
+      <a class="on" href="#" data-en="YouTube">ইউটিউব</a>
+    </div>
+
+    <h1 style="font-size:26px;margin:18px 0 6px" data-en={t.titleEn}>{t.titleBn}</h1>
+    <div class="meta">
+      <span>{t.year}</span>
+      <span class="chip" data-en={t.type}>{t.type}</span>
+      {t.genres.map(g => <span class="chip">{g}</span>)}
+    </div>
+    <p style="max-width:70ch;color:#c9c9d4" data-en={t.synopsisEn}>{t.synopsisBn}</p>
+
+    <script is:inline define:vars={{ id: t.youtubeId, title: t.titleEn }}>
+      const facade = document.getElementById('facade');
+      facade.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+        f.allow = 'autoplay; fullscreen; encrypted-media';
+        f.allowFullscreen = true;
+        f.title = title;
+        document.getElementById('player').appendChild(f);
+        facade.remove();
+      });
+    </script>
+  </div>
+</Base>

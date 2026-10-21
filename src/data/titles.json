@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "monpura",
+    "titleBn": "মনপুরা",
+    "titleEn": "Monpura",
+    "type": "film",
+    "year": 2009,
+    "genres": ["romance", "drama"],
+    "synopsisBn": "নদীর চরে বেড়ে ওঠা এক তরুণের ভালোবাসা ও হারানোর গল্প।",
+    "synopsisEn": "A river-island romance about love and loss.",
+    "youtubeId": "B6vaPi_z9lE"
+  },
+  {
+    "slug": "aynabaji",
+    "titleBn": "আয়নাবাজি",
+    "titleEn": "Aynabaji",
+    "type": "film",
+    "year": 2016,
+    "genres": ["thriller", "crime"],
+    "synopsisBn": "জেলের সাজা ভোগ করে দেওয়া এক ভাড়াটে অভিনেতার গল্প।",
+    "synopsisEn": "A courtroom impersonator living borrowed identities.",
+    "youtubeId": "ufcLliVBBqk"
+  },
+  {
+    "slug": "hawa",
+    "titleBn": "হাওয়া",
+    "titleEn": "Hawa",
+    "type": "film",
+    "year": 2022,
+    "genres": ["mystery", "drama"],
+    "synopsisBn": "সমুদ্রে আটকে পড়া জেলেদের ঘিরে রহস্যময় এক গল্প।",
+    "synopsisEn": "Fishermen stranded at sea encounter something strange.",
+    "youtubeId": "f8r6qL6C7PY"
+  },
+  {
+    "slug": "poran",
+    "titleBn": "পরান",
+    "titleEn": "Poran",
+    "type": "film",
+    "year": 2022,
+    "genres": ["romance", "drama"],
+    "synopsisBn": "বাধা-বিপত্তির মুখে দাঁড়ানো এক ভালোবাসার গল্প।",
+    "synopsisEn": "A love story that refuses to bend.",
+    "youtubeId": "MQ0d0EdMd-o"
+  },
+  {
+    "slug": "dhaka-attack",
+    "titleBn": "ঢাকা অ্যাটাক",
+    "titleEn": "Dhaka Attack",
+    "type": "film",
+    "year": 2017,
+    "genres": ["action", "thriller"],
+    "synopsisBn": "ঢাকাকে বাঁচাতে এক কমান্ডোর রেসের বিরুদ্ধে লড়াই।",
+    "synopsisEn": "A SWAT commander races to stop a bombing in Dhaka.",
+    "youtubeId": "lrXVqPfrZVM"
+  },
+  {
+    "slug": "shapludu",
+    "titleBn": "শাপলুড়ু",
+    "titleEn": "Shapludu",
+    "type": "film",
+    "year": 2019,
+    "genres": ["action"],
+    "synopsisBn": "ক্ষমতার খেলা আর প্রতিশোধের গল্প।",
+    "synopsisEn": "A story of power games and revenge.",
+    "youtubeId": "ctnyStFqnEU"
+  },
+  {
+    "slug": "karagar",
+    "titleBn": "কারাগার",
+    "titleEn": "Karagar",
+    "type": "series",
+    "year": 2022,
+    "genres": ["thriller", "drama"],
+    "synopsisBn": "জেলখানার ভেতরে ও বাইরে ছড়ানো এক রহস্যের গল্প।",
+    "synopsisEn": "A mystery spanning both sides of a prison wall.",
+    "youtubeId": "Wjn_ry6RNVs&list=PLgwbrhXSgw7J0N8IOrHgUNL6NhCR8HCXt"
+  },
+  {
+    "slug": "kaiser",
+    "titleBn": "কাইজার",
+    "titleEn": "Kaiser",
+    "type": "series",
+    "year": 2022,
+    "genres": ["thriller"],
+    "synopsisBn": "একজন গোয়েন্দার জটিল তদন্তের গল্প।",
+    "synopsisEn": "A detective's tangled investigation.",
+    "youtubeId": "hn71jiZ44iI&list=PLgwbrhXSgw7J7g8Zg_vMvToQX4d9glpPq"
+  },
+  {
+    "slug": "team",
+    "titleBn": "টিম",
+    "titleEn": "Team",
+    "type": "series",
+    "year": 2021,
+    "genres": ["action", "sport"],
+    "synopsisBn": "ফুটবল আর বন্ধুত্ব নিয়ে এক উঠতি দলের গল্প।",
+    "synopsisEn": "A rising football team, and the friendship holding it up.",
+    "youtubeId": "REPLACE_ME"
+  },
+  {
+    "slug": "bhalobasar-rong",
+    "titleBn": "ভালোবাসার রঙ",
+    "titleEn": "Bhalobasar Rong",
+    "type": "natok",
+    "year": 2021,
+    "genres": ["drama", "family"],
+    "synopsisBn": "পারিবারিক টানাপোড়েন নিয়ে একটি নাটক।",
+    "synopsisEn": "A natok about family friction.",
+    "youtubeId": "bj-yxJw6pV4"
+  }
+]

@@ -1,16 +1,53 @@
 ---
----
+import Base from '../layouts/Base.astro';
+import TitleCard from '../components/TitleCard.astro';
+import titles from '../data/titles.json';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const featured = titles.find(t => t.slug === 'hawa') ?? titles[0];
+const bg = `https://i.ytimg.com/vi/${featured.youtubeId}/maxresdefault.jpg`;
+---
+<Base>
+  <section class="hero">
+    <img class="hero-bg" src={bg} alt="" />
+    <div class="hero-fade"></div>
+    <div class="wrap hero-inner">
+      <h1 data-en={featured.titleEn}>{featured.titleBn}</h1>
+      <div class="meta">
+        <span>{featured.year}</span>
+        <span class="chip" data-en={featured.type}>{featured.type}</span>
+      </div>
+      <p data-en={featured.synopsisEn}>{featured.synopsisBn}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={`/watch/${featured.slug}`} data-en="▶ Play">▶ দেখুন</a>
+        <a class="btn btn-ghost" href={`/title/${featured.slug}`} data-en="Details">বিস্তারিত</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2 data-en="Natok">নাটক</h2>
+    </div>
+    <div class="grid">
+      {titles.filter(t => t.type === 'natok').map(t => <TitleCard t={t} />)}
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2 data-en="Films">সিনেমা</h2>
+    </div>
+    <div class="grid">
+      {titles.filter(t => t.type === 'film').map(t => <TitleCard t={t} />)}
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2 data-en="Series">ওয়েব সিরিজ</h2>
+    </div>
+    <div class="grid">
+      {titles.filter(t => t.type === 'series').map(t => <TitleCard t={t} />)}
+    </div>
+  </section>
+</Base>

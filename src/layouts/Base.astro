@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+const { title = 'ভুবন — বাংলা নাটক ও সিনেমা', description = 'বাংলা নাটক, সিনেমা ও ওয়েব সিরিজ ফ্রি দেখুন।' } = Astro.props;
+---
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a href="/" class="logo">ভুবন<span>.</span></a>
+        <nav class="nav">
+          <a href="/" data-en="Home">হোম</a>
+          <a href="/natok" data-en="Natok">নাটক</a>
+          <a href="/films" data-en="Films">সিনেমা</a>
+        </nav>
+        <button id="lang-toggle" class="lang-btn">EN</button>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 Bhubon · ভুবন</span>
+        <span>ভিডিও সৌজন্যে YouTube</span>
+      </div>
+    </footer>
+    <script is:inline>
+      const KEY = 'bhubon-lang';
+      const btn = document.getElementById('lang-toggle');
+      function apply(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-en]').forEach(el => {
+          if (!el.dataset.bn) el.dataset.bn = el.textContent;
+          el.textContent = lang === 'en' ? el.dataset.en : el.dataset.bn;
+        });
+        btn.textContent = lang === 'en' ? 'বাং' : 'EN';
+      }
+      apply(localStorage.getItem(KEY) || 'bn');
+      btn.addEventListener('click', () => {
+        const next = document.documentElement.lang === 'en' ? 'bn' : 'en';
+        localStorage.setItem(KEY, next);
+        apply(next);
+      });
+    </script>
+  </body>
+</html>
